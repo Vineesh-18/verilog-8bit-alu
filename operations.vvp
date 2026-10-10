@@ -1,0 +1,114 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002dc7ccfcb20 .scope module, "ADDER" "ADDER" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "A";
+    .port_info 1 /INPUT 8 "B";
+    .port_info 2 /OUTPUT 8 "SUM";
+o000002dc7ccfefa8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v000002dc7ccc2ce0_0 .net "A", 7 0, o000002dc7ccfefa8;  0 drivers
+o000002dc7ccfefd8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v000002dc7ccae370_0 .net "B", 7 0, o000002dc7ccfefd8;  0 drivers
+v000002dc7ccae410_0 .net "SUM", 7 0, L_000002dc7ccf3c80;  1 drivers
+L_000002dc7ccf3c80 .arith/sum 8, o000002dc7ccfefa8, o000002dc7ccfefd8;
+S_000002dc7ccfccb0 .scope module, "AND" "AND" 3 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "A";
+    .port_info 1 /INPUT 8 "B";
+    .port_info 2 /OUTPUT 8 "AND_OUT";
+o000002dc7ccff0c8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+o000002dc7ccff128 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+L_000002dc7ccfa130 .functor AND 8, o000002dc7ccff0c8, o000002dc7ccff128, C4<11111111>, C4<11111111>;
+v000002dc7ccf7ac0_0 .net "A", 7 0, o000002dc7ccff0c8;  0 drivers
+v000002dc7ccf7b60_0 .net "AND_OUT", 7 0, L_000002dc7ccfa130;  1 drivers
+v000002dc7ccf90e0_0 .net "B", 7 0, o000002dc7ccff128;  0 drivers
+S_000002dc7ccf8dc0 .scope module, "LEFTSHIFT" "LEFTSHIFT" 4 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "A";
+    .port_info 1 /OUTPUT 8 "LEFTSHIFT_OUT";
+o000002dc7ccff1e8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v000002dc7ccf9180_0 .net "A", 7 0, o000002dc7ccff1e8;  0 drivers
+v000002dc7ccf3dc0_0 .net "LEFTSHIFT_OUT", 7 0, L_000002dc7ccf3000;  1 drivers
+v000002dc7ccf3aa0_0 .net *"_ivl_2", 6 0, L_000002dc7ccf2f60;  1 drivers
+L_000002dc7cd48048 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000002dc7ccf3460_0 .net *"_ivl_4", 0 0, L_000002dc7cd48048;  1 drivers
+L_000002dc7ccf2f60 .part o000002dc7ccff1e8, 0, 7;
+L_000002dc7ccf3000 .concat [ 1 7 0 0], L_000002dc7cd48048, L_000002dc7ccf2f60;
+S_000002dc7ccf8f50 .scope module, "NOT_B" "NOT_B" 5 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "B";
+    .port_info 1 /OUTPUT 8 "NOT_B_OUT";
+o000002dc7ccff308 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+L_000002dc7ccfa1a0 .functor NOT 8, o000002dc7ccff308, C4<00000000>, C4<00000000>, C4<00000000>;
+v000002dc7ccf3280_0 .net "B", 7 0, o000002dc7ccff308;  0 drivers
+v000002dc7ccf36e0_0 .net "NOT_B_OUT", 7 0, L_000002dc7ccfa1a0;  1 drivers
+S_000002dc7ccf77a0 .scope module, "OR" "OR" 6 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "A";
+    .port_info 1 /INPUT 8 "B";
+    .port_info 2 /OUTPUT 8 "OR_OUT";
+o000002dc7ccff3c8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+o000002dc7ccff3f8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+L_000002dc7ccfa210 .functor OR 8, o000002dc7ccff3c8, o000002dc7ccff3f8, C4<00000000>, C4<00000000>;
+v000002dc7ccf33c0_0 .net "A", 7 0, o000002dc7ccff3c8;  0 drivers
+v000002dc7ccf3320_0 .net "B", 7 0, o000002dc7ccff3f8;  0 drivers
+v000002dc7ccf3780_0 .net "OR_OUT", 7 0, L_000002dc7ccfa210;  1 drivers
+S_000002dc7ccf7930 .scope module, "RIGHTSHIFT" "RIGHTSHIFT" 7 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "A";
+    .port_info 1 /OUTPUT 8 "RIGHTSHIFT_OUT";
+o000002dc7ccff4e8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v000002dc7ccf31e0_0 .net "A", 7 0, o000002dc7ccff4e8;  0 drivers
+v000002dc7ccf3500_0 .net "RIGHTSHIFT_OUT", 7 0, L_000002dc7cd91540;  1 drivers
+v000002dc7ccf35a0_0 .net *"_ivl_2", 6 0, L_000002dc7ccf3140;  1 drivers
+L_000002dc7cd48090 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000002dc7ccf30a0_0 .net *"_ivl_4", 0 0, L_000002dc7cd48090;  1 drivers
+L_000002dc7ccf3140 .part o000002dc7ccff4e8, 1, 7;
+L_000002dc7cd91540 .concat [ 7 1 0 0], L_000002dc7ccf3140, L_000002dc7cd48090;
+S_000002dc7ccae050 .scope module, "SUBTRACTOR" "SUBTRACTOR" 8 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "A";
+    .port_info 1 /INPUT 8 "B";
+    .port_info 2 /OUTPUT 8 "DIFF";
+o000002dc7ccff638 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+L_000002dc7ccfa280 .functor NOT 8, o000002dc7ccff638, C4<00000000>, C4<00000000>, C4<00000000>;
+o000002dc7ccff608 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v000002dc7ccf3a00_0 .net "A", 7 0, o000002dc7ccff608;  0 drivers
+v000002dc7ccf3640_0 .net "B", 7 0, o000002dc7ccff638;  0 drivers
+v000002dc7ccf3820_0 .net "DIFF", 7 0, L_000002dc7cd91c20;  1 drivers
+v000002dc7ccf38c0_0 .net *"_ivl_0", 7 0, L_000002dc7ccfa280;  1 drivers
+L_000002dc7cd480d8 .functor BUFT 1, C4<00000001>, C4<0>, C4<0>, C4<0>;
+v000002dc7ccf3d20_0 .net/2u *"_ivl_2", 7 0, L_000002dc7cd480d8;  1 drivers
+v000002dc7ccf3960_0 .net "b", 7 0, L_000002dc7cd90820;  1 drivers
+L_000002dc7cd90820 .arith/sum 8, L_000002dc7ccfa280, L_000002dc7cd480d8;
+L_000002dc7cd91c20 .arith/sum 8, o000002dc7ccff608, L_000002dc7cd90820;
+S_000002dc7ccae1e0 .scope module, "XOR" "XOR" 9 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "A";
+    .port_info 1 /INPUT 8 "B";
+    .port_info 2 /OUTPUT 8 "XOR_OUT";
+o000002dc7ccff7b8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+o000002dc7ccff7e8 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+L_000002dc7cd93b40 .functor XOR 8, o000002dc7ccff7b8, o000002dc7ccff7e8, C4<00000000>, C4<00000000>;
+v000002dc7ccf3b40_0 .net "A", 7 0, o000002dc7ccff7b8;  0 drivers
+v000002dc7ccf2ec0_0 .net "B", 7 0, o000002dc7ccff7e8;  0 drivers
+v000002dc7ccf3be0_0 .net "XOR_OUT", 7 0, L_000002dc7cd93b40;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 10;
+    "N/A";
+    "<interactive>";
+    "adder.v";
+    "and.v";
+    "leftshift.v";
+    "notb.v";
+    "or.v";
+    "rightshift.v";
+    "sub.v";
+    "xor.v";
